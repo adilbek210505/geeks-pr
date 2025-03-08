@@ -14,15 +14,15 @@ const PokeMon = () => {
     useEffect(() => {
         getPak()
     },[])
-    console.log(pac)
 
     return (
         <>
             <div className="container">
                 {
-                    pac.map(el => (
+                    pac.map((el,index) =>(
                         <div className="block" key={el.name}>
-                            <h2>{el.name}</h2>
+                            <img width={50} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`} alt=""/>
+                            <h1>{el.name}</h1>
                         </div>
                     ))
                 }
