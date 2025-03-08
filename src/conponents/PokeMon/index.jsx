@@ -6,9 +6,10 @@ const PokeMon = () => {
     const [pac,setPac] = useState([])
 
     const getPak = async () => {
-        const url = axios.get("https://pokeapi.co/api/v2/pokemon/ ")
+        const url = axios.get("https://pokeapi.co/api/v2/pokemon/")
         const {data} = await url
         setPac(data.results)
+
     }
 
     useEffect(() => {
@@ -21,7 +22,7 @@ const PokeMon = () => {
                 {
                     pac.map((el,index) =>(
                         <div className="block" key={el.name}>
-                            <img width={50} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`} alt=""/>
+                            <img width={50} src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/${index +1}.gif`} alt=""/>
                             <h1>{el.name}</h1>
                         </div>
                     ))
